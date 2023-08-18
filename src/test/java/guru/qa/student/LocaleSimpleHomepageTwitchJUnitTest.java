@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class LocaleSimpleHomepageTwitchJUnitTest {
+public class LocaleSimpleHomepageTwitchJUnitTest extends BaseTest {
 
     @BeforeEach
     void openBaseUrl() {
