@@ -20,8 +20,9 @@ public class SimpleHomepageYoutubeJUnitTest extends BaseTest {
     },
             delimiter = '|')
 
-    @ParameterizedTest(name = "После перехода на страницу '{0}' неавторизованным пользователем выдается сообщение '{1}'")
-    @DisplayName("Переход на соответствующие страницы после клика в левой колонке (навигационной панеле) на галвной странице")
+    @ParameterizedTest(name = "После перехода на страницу {0} неавторизованным пользователем выдается сообщение {1}")
+    @DisplayName("Переход на соответствующие страницы после клика " +
+            "в левой колонке (навигационной панеле) на главной странице")
     void successfulHomePageYoutubeTest(String valueTab, String valueText) {
         open("https://www.youtube.com/");
         $("#guide-renderer").$(byText(valueTab)).click();

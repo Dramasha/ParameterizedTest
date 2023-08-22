@@ -22,17 +22,17 @@ public class LocaleSimpleHomepageTwitchJUnitTest extends BaseTest {
 
     static Stream<Arguments> twitchSiteTest() {
         return Stream.of(
-                Arguments.of(Locale.English, List.of("Categories", "Live Channels")),
-                Arguments.of(Locale.Русский, List.of("Категории", "Активные каналы"))
+                Arguments.of(Locale.ENGLISH, List.of("Categories", "Live Channels")),
+                Arguments.of(Locale.RUSSIAN, List.of("Категории", "Активные каналы"))
         );
     }
 
-    @MethodSource
+    @MethodSource("twitchSiteTest")
     @ParameterizedTest
     void twitchSiteTest(Locale locale, List<String> expectedButtons){
         $("button[data-a-target='user-menu-toggle']").click();
         $("button[data-a-target='language-dropdown-link']").click();
-        $(".user-menu-language-list").$(byText(locale.name())).click();
+        $(".user-menu-language-list").$(byText(locale.getLang())).click();
         $$(".ScTabsLayout-sc-17qqzr5-0 li").filter(visible).shouldHave(texts(expectedButtons));
     }
 }
