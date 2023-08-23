@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class SimpleHomepageYoutubeJUnitTest extends BaseTest {
+public class SimpleHomepageYoutubeAndKrasnoeBeloeJUnitTest extends BaseTest {
 
     @CsvSource(value = {
             "Подписки    |  Тогда в этом разделе появятся новые видео с каналов, на которые вы подписаны",
